@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAUARIXHET E KSAJ KOHE</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+color:#fff;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+background-image:url('https://trendsresearch.org/wp-content/uploads/2024/06/Expansion-of-the-terrorist-organization-ISIS-copy.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+margin-top:40px;
+}
+
+.marquee-container{
+width:100%;
+background:#000;
+color:#d32f2f;
+position:fixed;
+top:0;
+left:0;
+height:40px;
+display:flex;
+align-items:center;
+z-index:10000;
+border-bottom:2px solid #d32f2f;
+}
+.marquee-text{font-size:1.2rem;font-weight:bold;white-space:nowrap}
+
+.overlay{
+position:fixed;
+top:40px;
+left:0;
+width:100%;
+height:calc(100% - 40px);
+background:rgba(0,0,0,.6);
+z-index:-1;
+}
+
+.container{
+width:100%;
+max-width:1000px;
+padding:80px 20px 20px;
+text-align:center;
+z-index:1;
+}
+
+h1{
+font-family:'Arial Black',Arial,sans-serif;
+font-size:2.5rem;
+margin-bottom:40px;
+text-transform:uppercase;
+border-bottom:2px solid #d32f2f;
+display:inline-block;
+padding-bottom:10px;
+}
+
+.section-title{font-size:1.5rem;margin:30px 0;color:#ffcccc}
+
+.grid-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-bottom:40px;
+}
+
+.card{
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(5px);
+padding:20px;
+border-radius:10px;
+transition:.3s;
+}
+.card:hover{transform:translateY(-5px);background:rgba(255,255,255,.2)}
+.card h3{min-height:50px}
+
+.btn{
+width:100%;
+padding:12px;
+background:#d32f2f;
+color:#fff;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+text-transform:uppercase;
+}
+.btn:hover{background:#b71c1c}
+
+.content-viewer-section{
+display:none;
+width:100%;
+height:90vh;
+background:#000;
+border-radius:8px;
+overflow:hidden;
+flex-direction:column;
+margin-top:20px;
+}
+
+.viewer-header{
+background:#202124;
+padding:10px 20px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.viewer-title{flex:1;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.btn-close{
+background:#d32f2f;
+color:#fff;
+border:none;
+padding:6px 20px;
+border-radius:4px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.btn-yt-fallback{
+background:#ff0000;
+color:#fff;
+text-decoration:none;
+padding:6px 10px;
+border-radius:4px;
+font-size:.8rem;
+}
+
+.content-frame{
+width:100%;
+flex-grow:1;
+border:none;
+background:#000;
+}
+
+.hidden{display:none!important}
+
+footer{margin-top:auto;padding:20px;font-size:.8rem;opacity:.7}
+
+@media(max-width:600px){
+h1{font-size:1.8rem}
+.grid-container{grid-template-columns:1fr 1fr}
+.content-viewer-section{height:80vh}
+.marquee-text{font-size:.9rem}
+}
+</style>
+
+<script>
+function hapLibrin(link,titulli){
+document.getElementById('main-content').classList.add('hidden');
+const v=document.getElementById('content-viewer');
+v.style.display='flex';
+v.classList.remove('hidden');
+v.style.background='#fff';
+document.getElementById('viewer-title-text').innerText=titulli;
+document.getElementById('fallback-link').classList.add('hidden');
+document.getElementById('viewer-frame').src=link;
+window.scrollTo(0,0);
+}
+
+function getYouTubeId(url){
+const r=/^.*(youtu.be\/|embed\/|watch\?v=|shorts\/)([^#&?]{11}).*/;
+const m=url.match(r);
+return m?m[2]:null;
+}
+
+function hapVideo(link,titulli){
+const id=getYouTubeId(link);
+if(!id){alert("Link jo valid");return;}
+document.getElementById('main-content').classList.add('hidden');
+const v=document.getElementById('content-viewer');
+v.style.display='flex';
+v.classList.remove('hidden');
+v.style.background='#000';
+document.getElementById('viewer-title-text').innerText=titulli;
+document.getElementById('viewer-frame').src=
+`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+const fb=document.getElementById('fallback-link');
+fb.href=link;
+fb.classList.remove('hidden');
+window.scrollTo(0,0);
+}
+
+function kthehuMbrapa(){
+document.getElementById('main-content').classList.remove('hidden');
+const v=document.getElementById('content-viewer');
+v.style.display='none';
+v.classList.add('hidden');
+document.getElementById('viewer-frame').src="";
+}
+</script>
+</head>
+
+<body>
+
+<div class="marquee-container">
+<marquee class="marquee-text">HAUARIXHET E KSAJ KOHE</marquee>
+</div>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+<div id="content-viewer" class="content-viewer-section">
+<div class="viewer-header">
+<span id="viewer-title-text" class="viewer-title"></span>
+<button class="btn-close" onclick="kthehuMbrapa()">Mbyll</button>
+<a id="fallback-link" target="_blank" class="btn-yt-fallback hidden">YouTube</a>
+</div>
+<iframe id="viewer-frame" class="content-frame"
+allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+</div>
+
+<div id="main-content">
+
+<h1>HAUARIXHET E KSAJ KOHE</h1>
+
+<div class="section-title">LIBRAT PDF</div>
+<div class="grid-container">
+<div class="card"><h3>ARGUMENTE 1</h3>
+<button class="btn" onclick="hapLibrin('https://drive.google.com/file/d/1SvY6XeWP46gZ4o58ZtOBmFKf0Bbtlr7o/preview','Libri 1')">Lexo</button></div>
+
+<div class="card"><h3>ARGUMENTE 2</h3>
+<button class="btn" onclick="hapLibrin('https://drive.google.com/file/d/1omtEshdFy1EPJuSsIbBNBc_tlrC16wkH/preview','Libri 2')">Lexo</button></div>
+</div>
+
+<div class="section-title">VIDEOT</div>
+<div class="grid-container">
+<div class="card"><h3>10 CILESIT E ISIS</h3>
+<button class="btn" onclick="hapVideo('https://youtu.be/YqPHfFkGl2M','10 Cilësit')">Shiko</button></div>
+
+<div class="card"><h3>SHEHIDLLEK ME EXPLOSIV</h3>
+<button class="btn" onclick="hapVideo('https://youtube.com/shorts/CYtjw1YZ7Dc','Explosiv')">Shiko</button></div>
+</div>
+
+</div>
+</div>
+
+<footer>&copy; 2023 Hauarixhet E Ksaj Kohe</footer>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
