@@ -166,8 +166,7 @@ h1{font-size:1.8rem}
 function hapLibrin(link,titulli){
 document.getElementById('main-content').classList.add('hidden');
 const v=document.getElementById('content-viewer');
-v.style.display='flex';
-v.classList.remove('hidden');
+v.style.display='flex';v.classList.remove('hidden');
 v.style.background='#fff';
 document.getElementById('viewer-title-text').innerText=titulli;
 document.getElementById('fallback-link').classList.add('hidden');
@@ -186,23 +185,20 @@ const id=getYouTubeId(link);
 if(!id){alert("Link jo valid");return;}
 document.getElementById('main-content').classList.add('hidden');
 const v=document.getElementById('content-viewer');
-v.style.display='flex';
-v.classList.remove('hidden');
+v.style.display='flex';v.classList.remove('hidden');
 v.style.background='#000';
 document.getElementById('viewer-title-text').innerText=titulli;
 document.getElementById('viewer-frame').src=
 `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
 const fb=document.getElementById('fallback-link');
-fb.href=link;
-fb.classList.remove('hidden');
+fb.href=link;fb.classList.remove('hidden');
 window.scrollTo(0,0);
 }
 
 function kthehuMbrapa(){
 document.getElementById('main-content').classList.remove('hidden');
 const v=document.getElementById('content-viewer');
-v.style.display='none';
-v.classList.add('hidden');
+v.style.display='none';v.classList.add('hidden');
 document.getElementById('viewer-frame').src="";
 }
 </script>
@@ -257,8 +253,13 @@ allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
 </div>
 
 <div class="card">
-<h3>TE ASHTU QUAJTUR DIJETAR SHARLATAN</h3>
+<h3>Dijetarët e tyrë vet shpallurë Lista Tyre</h3>
 <button class="btn" onclick="hapLibrin('https://drive.google.com/file/d/1oLnoU9ewUJDB-GDuqxIf4rNvh4YNnJRX/preview','Libri 5')">Lexo Tani</button>
+</div>
+
+<div class="card">
+<h3>ARGUMENTE 6</h3>
+<button class="btn" onclick="hapLibrin('https://drive.google.com/file/d/1KMr1IGOO_KKBi1c0kpasUTvTFgURiAL0/preview','Libri i Ri')">Lexo Tani</button>
 </div>
 
 </div>
